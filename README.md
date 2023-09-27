@@ -15,11 +15,13 @@ This repository contains a simple example of an integration between Screenly and
 1. **Run Webpack in Watch Mode:**
 
  This will automatically rebuild your project whenever you make changes to the source files.
+
 ```npx webpack --watch```
 
 2. **Serve the App Locally:**
 
 Use the `screenly edge-app run` command to serve your app locally.
+
 ```screenly edge-app run```
 
 This will start the app, and you should be able to access it from your browser.
@@ -29,11 +31,13 @@ This will start the app, and you should be able to access it from your browser.
 1. **Build the App for Production:**
 
 This will create optimized builds suitable for production environments.
+
 ```npx webpack --mode production```
 
 2. **Serve the App:**
 
 Just like in development, use the `screenly edge-app run` command.
+
 ```screenly edge-app run```
 
 ## Contributing
