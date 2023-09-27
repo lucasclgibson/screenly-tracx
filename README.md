@@ -1,54 +1,45 @@
-# QR code generation
+# Screenly TRACX MVP
 
-This example shows how to generate a QR code from a URL and display it on the screen.
+This repository contains a simple example of an integration between Screenly and TRACX.
+
+## Prerequisites
+
+- Ensure you have [Node.js](https://nodejs.org/) and [npm](https://www.npmjs.com/) installed.
+- Install all the necessary dependencies by running:
+```npm install```
 
 ## Deploying the example
 
-If you haven't created an Edge App yet, run the following command:
+### Development
 
-```bash
-screenly edge-app create \
-    --name my-qr-code \
-    --in-place
-```
+1. **Run Webpack in Watch Mode:**
 
-Make sure to copy the Playground theme into the app directory by running the following:
+ This will automatically rebuild your project whenever you make changes to the source files.
+```npx webpack --watch```
 
-```bash
-../../scripts/copy_playground_theme.sh
-```
+2. **Serve the App Locally:**
 
-It's essential to include the dependency above or else the app will not be displayed properly.
+Use the `screenly edge-app run` command to serve your app locally.
+```screenly edge-app run```
 
-To deploy the example, run the following command:
+This will start the app, and you should be able to access it from your browser.
 
-```bash
-screenly edge-app upload
-```
+### Production
 
-## Using the `generateQrCode` function
+1. **Build the App for Production:**
 
-The `generateQrCode` function (inside `static/js/main.js`) takes a URL and
-returns a QR code image as an SVG string. Here's an example of how to use it:
+This will create optimized builds suitable for production environments.
+```npx webpack --mode production```
 
-```js
-generateQrCode(
-  'https://screenly.io',
-  options,
-  enableUtm = false,
-  callback = (svgElement) => {
-    document.body.appendChild(svgElement);
-  },
-);
-```
+2. **Serve the App:**
 
-If `enableUtm` is set to `true`, the function will add the following query
-parameters to the URL:
+Just like in development, use the `screenly edge-app run` command.
+```screenly edge-app run```
 
-* `utm_source=screenly`
-* `utm_medium=digital-signage`
-* `utm_location=$SCREEN_LOCATION`
-* `utm_placement=$SCREEN_HOSTNAME`
+## Contributing
 
-`utm_location` and `utm_placement` refers to the `location` and `hostname` of
-the screen, respectively, which are derived from the Screenly metadata.
+If you'd like to contribute to this project, please fork the repository and submit a pull request.
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
